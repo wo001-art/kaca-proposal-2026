@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국아트크래프트협회 홈페이지 제작 제안서 | 우아젠(WUAZEN)</title>
+<meta name="description" content="한국아트크래프트협회 공식 홈페이지 제작 제안서 — 우아젠(WUAZEN), 2026-07-22">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<style>
+:root{
+  --navy:#0D1B2A; --navy2:#152840; --gold:#C9A84C; --gold-soft:#e7d9a8;
+  --ivory:#F7F6F1; --ink:#1c2230; --muted:#5b6472; --line:#e6e3d8;
+  --card:#ffffff; --ok:#1f9d63;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard",system-ui,-apple-system,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.22),transparent 70%)}
+.hero .wrap{position:relative;z-index:1}
+.badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.04em;padding:6px 14px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:34px;font-weight:800;line-height:1.3;letter-spacing:-.02em}
+.hero h1 .sub{display:block;font-size:16px;font-weight:500;color:var(--gold-soft);margin-top:14px;letter-spacing:.02em}
+.meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:14px;color:#c7cfdb}
+.meta b{color:#fff;font-weight:600}
+.hero .herobtn{display:inline-block;margin-top:28px;background:var(--gold);color:#2a2205;font-weight:800;font-size:15px;padding:13px 24px;border-radius:10px;text-decoration:none;box-shadow:0 6px 18px rgba(201,168,76,.28)}
+.hero .herobtn:hover{background:#d8b95c}
+
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-.01em;color:var(--navy);margin-bottom:8px}
+.eyebrow .em{font-size:22px}
+.lead{color:var(--muted);font-size:15px;margin-bottom:22px}
+h3.blk{font-size:16px;font-weight:700;color:var(--navy);margin:26px 0 12px}
+
+.callout{background:#fbf7ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:12px;padding:16px 18px;font-size:14.5px;color:#5a5230;margin:16px 0}
+.callout.navy{background:#eef2f7;border-color:#cdd7e5;border-left-color:var(--navy);color:#33414f}
+.callout b{color:var(--navy)}
+
+.samplebox{background:linear-gradient(135deg,#12233a,#1c3350);border-radius:16px;padding:26px 24px;margin:18px 0;text-align:center;color:#fff}
+.samplebox .t{font-size:17px;font-weight:700;margin-bottom:6px}
+.samplebox .d{font-size:13.5px;color:#b7c2d2;margin-bottom:16px}
+.samplebtn{display:inline-block;background:var(--gold);color:#2a2205;font-weight:800;font-size:15px;padding:13px 26px;border-radius:10px;text-decoration:none;box-shadow:0 6px 18px rgba(201,168,76,.3)}
+.samplebtn:hover{background:#d8b95c}
+.samplebox .url{display:block;margin-top:12px;font-size:12.5px;color:#8fa0b5}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:6px 0 4px}
+.tbl th,.tbl td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{background:var(--navy);color:#fff;font-weight:600;font-size:13.5px;letter-spacing:.01em}
+.tbl tbody tr:last-child td{border-bottom:none}
+.tbl tbody tr:nth-child(even){background:#faf9f4}
+.tbl td.c,.tbl th.c{text-align:center}
+.pill{display:inline-block;background:#eaf5ee;color:var(--ok);font-size:12px;font-weight:600;padding:2px 8px;border-radius:6px}
+.pill.gold{background:#fbf3dc;color:#93761f}
+.pill.gray{background:#eef0f3;color:#5b6472}
+
+.stdcard{background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:26px 24px;box-shadow:0 6px 22px rgba(201,168,76,.14);margin-top:8px}
+.stdcard .pk{font-size:14px;font-weight:700;color:#93761f;letter-spacing:.03em}
+.stdcard .pr{font-size:30px;font-weight:800;color:var(--navy);margin:6px 0 2px}
+.stdcard .pr small{font-size:14px;font-weight:600;color:var(--muted)}
+.stdcard ul{list-style:none;margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;font-size:14px}
+.stdcard ul li{padding:4px 0 4px 20px;position:relative;color:#3a4250}
+.stdcard ul li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+
+.flow{counter-reset:step;margin-top:8px}
+.flow li{list-style:none;position:relative;padding:10px 0 10px 44px;border-bottom:1px dashed var(--line);font-size:14.5px}
+.flow li:last-child{border-bottom:none}
+.flow li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:8px;width:28px;height:28px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.plain{list-style:none;margin-top:6px}
+.plain li{padding:7px 0 7px 22px;position:relative;font-size:14.5px;color:#3a4250}
+.plain li::before{content:"•";position:absolute;left:4px;color:var(--gold);font-weight:800}
+
+.total{background:var(--navy);color:#fff;border-radius:14px;padding:22px 24px;margin-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.total .lab{font-size:14px;color:#c7cfdb}
+.total .val{font-size:28px;font-weight:800;color:var(--gold)}
+.total .val small{font-size:14px;color:#c7cfdb;font-weight:500}
+.paygrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.paycard{background:#eef2f7;border:1px solid #cdd7e5;border-left:4px solid var(--navy);border-radius:12px;padding:14px 16px;font-size:13.8px;color:#33414f;line-height:1.6}
+.paycard b{display:block;color:var(--navy);margin-bottom:4px;font-size:14px}
+.paycard .big{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.paynote{font-size:12.5px;color:var(--muted);margin-top:10px}
+
+footer{background:var(--navy);color:#c7cfdb;padding:40px 0;text-align:center}
+footer .cta{font-size:18px;color:#fff;font-weight:700;margin-bottom:14px}
+footer .contact{font-size:14.5px;line-height:2}
+footer .contact b{color:var(--gold)}
+.note{font-size:12.5px;color:#8790a0;margin-top:18px}
+
+@media(max-width:720px){
+  .hero h1{font-size:26px}
+  .tbl{font-size:13px}
+  .tbl th,.tbl td{padding:9px 10px}
+  section{padding:34px 0}
+  .eyebrow{font-size:19px}
+  .stdcard ul{grid-template-columns:1fr}
+  .paygrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">HOMEPAGE PROPOSAL</span>
+    <h1>한국아트크래프트협회 홈페이지 제작 제안서
+      <span class="sub">협회 활동과 교육 프로그램을 담는 공식 홈페이지 — 관리까지 쉬운 현대적 구축</span>
+    </h1>
+    <div class="meta">
+      <span>제작 · <b>우아젠 (WUAZEN)</b></span>
+      <span>제안일 · <b>2026. 07. 22.</b></span>
+      <span>담당 · <b>한기홍 대표</b></span>
+    </div>
+    <a class="herobtn" href="https://kaca-homepage-deploy.vercel.app" target="_blank" rel="noopener">🌐 완성 시안 홈페이지 바로 보기 →</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="eyebrow"><span class="em">💳</span> 결제 안내</div>
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="c">비율</th><th>금액 (부가세 포함)</th><th>납부 시점</th></tr></thead>
+      <tbody>
+        <tr><td><b>계약금</b></td><td class="c">50%</td><td>600,000원</td><td>작업 착수 시</td></tr>
+        <tr><td><b>잔금</b></td><td class="c">50%</td><td>600,000원</td><td>완료·검수 후</td></tr>
+      </tbody>
+    </table>
+    <div class="total">
+      <span class="lab">총 구축 비용 (부가세 포함)</span>
+      <span class="val">1,200,000원</span>
+    </div>
+    <div class="paygrid">
+      <div class="paycard"><b>🧾 세금계산서</b>주식회사 우아젠(WUAZEN) 명의로 발급 · 계약금·잔금 각 입금 시점에 해당 금액분 발급</div>
+      <div class="paycard"><b>🏦 입금계좌</b><span class="big">우리은행 1005-704-942698</span><br>예금주 주식회사 우아젠</div>
+    </div>
+    <p class="paynote">※ 월 유지보수 12만원/월(선택) — 첫 1개월 무상 제공</p>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">🎯</span> 프로젝트 개요</div>
+    <p class="lead">한국아트크래프트협회의 공식 홈페이지를 구축하여, 협회 활동과 교육 프로그램을 온라인으로 안내하고 회원 및 잠재 수강생에게 전문적인 이미지를 전달합니다.</p>
+    <div class="callout"><b>💡 직접 관리 가능</b> — Notion에서 콘텐츠를 수정하면 홈페이지에 자동 반영됩니다. 별도 개발 요청 없이 협회에서 직접 관리할 수 있습니다.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">⚙️</span> 기술 구성</div>
+    <p class="lead">안정적이고 검증된 기술 스택을 사용합니다.</p>
+    <table class="tbl">
+      <thead><tr><th>구성</th><th>역할</th><th>설명</th><th class="c">비용</th></tr></thead>
+      <tbody>
+        <tr><td><b>Notion</b></td><td>콘텐츠 관리(CMS)</td><td>협회에서 직접 텍스트·이미지 수정</td><td class="c"><span class="pill">무료</span></td></tr>
+        <tr><td><b>Next.js</b></td><td>웹사이트 엔진</td><td>React 기반 고성능 웹 프레임워크</td><td class="c"><span class="pill">무료(오픈소스)</span></td></tr>
+        <tr><td><b>Vercel</b></td><td>호스팅·배포</td><td>Next.js 공식 호스팅, 자동 배포</td><td class="c"><span class="pill">무료(기본)</span></td></tr>
+        <tr><td><b>n8n</b></td><td>자동화</td><td>Notion 변경 감지 → 자동 빌드·배포</td><td class="c"><span class="pill gray">기존 운영 중</span></td></tr>
+        <tr><td><b>도메인</b></td><td>주소 등록·연결</td><td>협회 희망 주소 신규 등록 대행 <span class="pill gold">협회 미보유 → 신규 취득</span></td><td class="c">연 약 2만원</td></tr>
+      </tbody>
+    </table>
+    <div class="callout navy"><b>✅ 월 유지보수 12만원/월</b>에 호스팅·도메인·보안 관리가 모두 포함됩니다. 인프라 실비는 도메인 연 약 2만원 수준입니다.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">🖥️</span> 홈페이지 구성 (7페이지)</div>
+    <table class="tbl">
+      <thead><tr><th>페이지</th><th>내용</th><th class="c">상태</th></tr></thead>
+      <tbody>
+        <tr><td><b>메인(홈)</b></td><td>협회 소개, 주요 활동 요약, 통계, CTA</td><td class="c"><span class="pill">샘플 완료</span></td></tr>
+        <tr><td><b>협회소개</b></td><td>비전, 연혁, 임원 소개, 핵심 가치</td><td class="c"><span class="pill">샘플 완료</span></td></tr>
+        <tr><td><b>교육과정</b></td><td>기초·심화·전문가 과정, 원데이클래스</td><td class="c"><span class="pill">샘플 완료</span></td></tr>
+        <tr><td><b>자격증 안내</b></td><td>자격증 종류, 취득 절차, 응시 안내</td><td class="c"><span class="pill">샘플 완료</span></td></tr>
+        <tr><td><b>전시회·갤러리</b></td><td>전시 일정, 작품 갤러리</td><td class="c"><span class="pill">샘플 완료</span></td></tr>
+        <tr><td><b>교육처 안내</b></td><td>전국 교육처 위치, 수강 안내</td><td class="c"><span class="pill">샘플 완료</span></td></tr>
+        <tr><td><b>문의하기</b></td><td>연락처, 입회·교육 문의</td><td class="c"><span class="pill">샘플 완료</span></td></tr>
+      </tbody>
+    </table>
+    <div class="samplebox">
+      <div class="t">🌐 완성 시안 홈페이지를 직접 확인해 보세요</div>
+      <div class="d">실제로 동작하는 데모 시안입니다. PC·모바일 모두에서 열립니다.</div>
+      <a class="samplebtn" href="https://kaca-homepage-deploy.vercel.app" target="_blank" rel="noopener">완성 시안 바로 보기 →</a>
+      <span class="url">kaca-homepage-deploy.vercel.app</span>
+    </div>
+    <div class="callout"><span style="font-size:13.5px;color:#8a7f52">※ 본 시안은 계약 완성본이 아닌 제안용 시안이며, 계약 후 협회 로고·실제 콘텐츠로 전면 교체하여 완성합니다.</span></div>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">🔍</span> 참고 수준</div>
+    <p class="lead">국내 동종 협회 중 가장 직접적인 비교 대상 수준 이상으로 구현해 드립니다.</p>
+    <table class="tbl">
+      <thead><tr><th>참고 사이트</th><th class="c">국가</th><th>주요 특징</th><th>참고 포인트</th></tr></thead>
+      <tbody>
+        <tr><td><b>한국레진공예협회 (KRCA)</b></td><td class="c">🇰🇷 국내</td><td>자격증, 교육과정, 포트폴리오, 쇼핑몰</td><td>가장 직접적인 비교 대상 — 이 수준 이상 구현</td></tr>
+        <tr><td>Hawaii Fluid Art</td><td class="c">🇺🇸 미국</td><td>플루이드아트 스튜디오 체인, 클래스 예약</td><td>모던 디자인 + 클래스/이벤트 안내</td></tr>
+        <tr><td>일본레진아트협회 (RAC)</td><td class="c">🇯🇵 일본</td><td>강사 인증, 체험 강좌, 교육처 맵</td><td>자격증/강사 인증 체계 참고</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><b>💡</b> 위 협회들 수준 이상의 홈페이지를 더 빠르고 현대적인 기술(Notion + Next.js + Vercel)로 구현하여, 관리도 쉽고 확장성도 뛰어납니다.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">📦</span> 제안 구성 · 견적</div>
+    <div class="stdcard">
+      <div class="pk">STANDARD 패키지 (확정)</div>
+      <div class="pr">120<small>만원 (부가세 포함)</small></div>
+      <ul>
+        <li>홈페이지 7페이지 + 갤러리/공지</li>
+        <li>디자인 퀄리티 업(애니메이션)</li>
+        <li>Notion CMS · Vercel 자동 배포</li>
+        <li>검색/필터 기능</li>
+        <li>반응형(모바일) 최적화</li>
+        <li>SEO 기본 + Analytics</li>
+        <li>n8n 자동화 + Band 동기화</li>
+        <li>신규 도메인 등록·연결 대행</li>
+        <li>1개월 무상 유지보수</li>
+        <li>월 유지보수 12만원/월(선택)</li>
+      </ul>
+    </div>
+    <div class="callout navy"><b>구축 비용 120만원(부가세 포함)</b> — 협회 규모에 맞춘 확정 제안입니다. 아래 회원 로그인 기능은 필요 시 추가하실 수 있는 별도 옵션입니다.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">🛠️</span> 유지보수 · 인프라 관리</div>
+    <div class="callout navy"><b>월 유지보수 12만원/월 (부가세 포함)</b> — 아래 인프라 관리와 기술 지원이 모두 포함됩니다. 첫 1개월은 무상 제공되며, 이후 유지보수 계약 여부를 선택하실 수 있습니다.</div>
+    <h3 class="blk">인프라 관리 (유지보수 포함)</h3>
+    <ul class="plain">
+      <li><b>호스팅 운영</b> — Vercel 서버에서 홈페이지가 항상 정상 작동하도록 관리</li>
+      <li><b>도메인 관리</b> — 협회 희망 도메인 신규 등록·연결·갱신을 대행 <span class="pill gold">협회 미보유 → 신규 취득 대행</span></li>
+      <li><b>SSL 보안 인증서</b> — HTTPS 보안 연결을 자동 유지</li>
+      <li><b>보안 업데이트</b> — 웹 프레임워크 보안 패치를 정기 적용</li>
+      <li><b>자동 배포</b> — Notion에서 내용을 수정하면 홈페이지에 자동 반영</li>
+    </ul>
+    <h3 class="blk">기술 지원</h3>
+    <ul class="plain">
+      <li><b>버그·오류 수정</b> — 문제가 생기면 신속하게 해결</li>
+      <li><b>콘텐츠 수정 도움</b> — Notion 사용이 어려우면 대신 수정</li>
+      <li><b>사용법 안내</b> — 카카오톡·전화로 Notion CMS 사용법 안내</li>
+    </ul>
+    <div class="callout"><b>✨ TIP</b> — 처음 1개월은 무상 유지보수 기간입니다. 이 기간 동안 사용법을 충분히 익히신 후 유지보수 계약 여부를 결정하실 수 있습니다.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">📋</span> 진행 프로세스</div>
+    <ol class="flow">
+      <li><b>협의</b> — 요구사항 확인, 디자인 방향 결정</li>
+      <li><b>Notion 콘텐츠 구성</b> — 협회 제공 텍스트·이미지로 페이지 구성</li>
+      <li><b>디자인·개발</b> — Next.js 기반 홈페이지 제작</li>
+      <li><b>검수·수정</b> — 피드백 반영, 최종 확인</li>
+      <li><b>배포·도메인 연결</b> — Vercel 배포 + 신규 도메인 등록·연결</li>
+      <li><b>운영 교육</b> — Notion에서 콘텐츠 수정하는 방법 안내</li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">📝</span> 협회에서 준비해주실 사항</div>
+    <ul class="plain">
+      <li>협회 로고 파일 (고화질)</li>
+      <li>각 페이지에 들어갈 텍스트 내용</li>
+      <li>전시회·작품 이미지 (고화질)</li>
+      <li>임원진 사진 및 소개 (선택)</li>
+      <li>희망 도메인 주소 (신규 등록 대행 — 협회 보유 도메인 없음)</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="em">➕</span> 추가 옵션 · 회원 로그인 기능</div>
+    <p class="lead">필요하실 경우 Standard 패키지에 회원 로그인 기능을 추가하실 수 있습니다. (선택 옵션)</p>
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>항목</th><th>내용</th><th class="c">비용</th></tr></thead>
+      <tbody>
+        <tr><td>유료</td><td>Notion 회원DB + 인증 API</td><td>회원DB 설계 + NextAuth.js 연동 + 세션 관리</td><td class="c">15만원</td></tr>
+        <tr><td>유료</td><td>로그인 페이지</td><td>핸드폰번호 + 비밀번호 입력 UI</td><td class="c">5만원</td></tr>
+        <tr><td>서비스</td><td>비밀번호 초기화</td><td>자격증번호 입력 → 비번 리셋</td><td class="c"><span class="pill">0원</span></td></tr>
+        <tr><td>서비스</td><td>회원전용 라우트</td><td>middleware 기반 페이지 접근 제어</td><td class="c"><span class="pill">0원</span></td></tr>
+        <tr><td>서비스</td><td>게시판/전용 페이지</td><td>Notion DB 연동 게시판(공지 패턴 복제)</td><td class="c"><span class="pill">0원</span></td></tr>
+        <tr><td>서비스</td><td>기존 페이지 권한</td><td>갤러리/자료실 등 회원 권한 추가</td><td class="c"><span class="pill">0원</span></td></tr>
+      </tbody>
+    </table>
+    <div class="total">
+      <span class="lab">로그인 옵션 추가 시 · Standard 120만원(부가세 포함) + 로그인 옵션 20만원</span>
+      <span class="val">140만원 <small>(부가세 포함)</small></span>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:10px">※ 로그인 방식: 계정은 자격증 발급 시 Notion에서 자동 생성(핸드폰번호=아이디), 비번 분실 시 자격증번호로 초기화, 일반인 가입 불가(관리자만 생성), 게시판은 Notion DB 연동으로 관리자가 작성·관리.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="cta">검토해보시고, 문의사항이 있으시면 편하게 연락 주세요.</div>
+    <div class="contact">
+      <b>주식회사 우아젠 (WUAZEN)</b> · 한기홍 대표 · 사업자등록번호 557-86-04054<br>
+      010-6483-2862 · wo.001@wuazen.com · wuazen.com<br>
+      대전 유성구 은구비남로33번길 13-8, 3층 3382호
+    </div>
+    <div class="note">본 제안서는 한국아트크래프트협회 전용으로 작성되었습니다. · 제안일 2026. 07. 22.</div>
+  </div>
+</footer>
+
+</body>
+</html>
