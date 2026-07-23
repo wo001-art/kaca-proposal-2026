@@ -78,6 +78,11 @@ h3.blk{font-size:16px;font-weight:700;color:var(--navy);margin:26px 0 12px}
 .total .lab{font-size:14px;color:#c7cfdb}
 .total .val{font-size:28px;font-weight:800;color:var(--gold)}
 .total .val small{font-size:14px;color:#c7cfdb;font-weight:500}
+.paygrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.paycard{background:#eef2f7;border:1px solid #cdd7e5;border-left:4px solid var(--navy);border-radius:12px;padding:14px 16px;font-size:13.8px;color:#33414f;line-height:1.6}
+.paycard b{display:block;color:var(--navy);margin-bottom:4px;font-size:14px}
+.paycard .big{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.paynote{font-size:12.5px;color:var(--muted);margin-top:10px}
 
 footer{background:var(--navy);color:#c7cfdb;padding:40px 0;text-align:center}
 footer .cta{font-size:18px;color:#fff;font-weight:700;margin-bottom:14px}
@@ -92,6 +97,7 @@ footer .contact b{color:var(--gold)}
   section{padding:34px 0}
   .eyebrow{font-size:19px}
   .stdcard ul{grid-template-columns:1fr}
+  .paygrid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -116,15 +122,22 @@ footer .contact b{color:var(--gold)}
 
   <section>
     <div class="eyebrow"><span class="em">💳</span> 결제 안내</div>
-    <ul class="plain">
-      <li><b>계약금 50% · 60만원</b> (부가세 포함) — 작업 착수 시</li>
-      <li><b>잔금 50% · 60만원</b> (부가세 포함) — 완료·검수 후</li>
-      <li>총 구축 비용 <b>120만원</b> (부가세 포함) · 월 유지보수 12만원/월(선택, 첫 1개월 무상)</li>
-    </ul>
-    <div class="callout navy"><b>세금계산서</b>는 <b>주식회사 우아젠(WUAZEN)</b> 명의로 발급해 드립니다. 계약금·잔금 각 입금 시점에 해당 금액분의 세금계산서를 발급합니다.</div>
-    <ul class="plain">
-      <li><b>입금계좌</b> — 우리은행 1005-704-942698 (예금주 주식회사 우아젠)</li>
-    </ul>
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="c">비율</th><th>금액 (부가세 포함)</th><th>납부 시점</th></tr></thead>
+      <tbody>
+        <tr><td><b>계약금</b></td><td class="c">50%</td><td>600,000원</td><td>작업 착수 시</td></tr>
+        <tr><td><b>잔금</b></td><td class="c">50%</td><td>600,000원</td><td>완료·검수 후</td></tr>
+      </tbody>
+    </table>
+    <div class="total">
+      <span class="lab">총 구축 비용 (부가세 포함)</span>
+      <span class="val">1,200,000원</span>
+    </div>
+    <div class="paygrid">
+      <div class="paycard"><b>🧾 세금계산서</b>주식회사 우아젠(WUAZEN) 명의로 발급 · 계약금·잔금 각 입금 시점에 해당 금액분 발급</div>
+      <div class="paycard"><b>🏦 입금계좌</b><span class="big">우리은행 1005-704-942698</span><br>예금주 주식회사 우아젠</div>
+    </div>
+    <p class="paynote">※ 월 유지보수 12만원/월(선택) — 첫 1개월 무상 제공</p>
   </section>
 
   <section>
